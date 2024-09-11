@@ -1,0 +1,42 @@
+version: "3.9"
+services:
+  postgres-database:
+    image: postgres:13
+    environment:
+      - POSTGRES_USER=rope
+      - POSTGRES_PASSWORD=rope
+      - POSTGRES_DB=postgres
+    volumes:
+      - "./ny_taxi_postgres_data:/var/lib/postgresql/data:rw"
+    ports:
+      - "8888:5432"
+    networks:
+      - pgg-network
+
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@admin.com
+      - PGADMIN_DEFAULT_PASSWORD=root
+    ports:
+      - "5431:80"
+    networks:
+      - pgg-network
+
+  metabase:
+    image: metabase/metabase
+    ports:
+      - "3000:3000"
+    environment:
+      MB_DB_TYPE: postgres
+      MB_DB_DBNAME: postgres
+      MB_DB_PORT: 5432
+      MB_DB_USER: rope
+      MB_DB_PASS: rope
+      MB_DB_HOST: postgres-database
+    networks:
+      - pgg-network
+
+networks:
+  pgg-network:
+    driver: bridge
