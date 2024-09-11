@@ -7,12 +7,11 @@ This project focuses on building a data engineering pipeline that processes and 
 The NYC Taxi Data Engineering Pipeline performs the following tasks:
 1. **Data Collection**: Fetches taxi data from the NYC Taxi and Limousine Commission (TLC) datasets.
 2. **Data Storage**: Loads the raw data into a database, leveraging tools such as PostgreSQL.
-3. **Data Transformation**: Cleans, aggregates, and processes the raw data.
-4. **Data Analysis**: Performs analytical queries to derive useful facts such as:
+3. **Data Analysis**: Performs analytical queries to derive useful facts such as:
    - Average trip distances
    - Distribution of fares
    - Most frequent pickup/dropoff locations
-5. **Visualization**: Generates visual insights using tools like Matplotlib, Plotly, or Tableau (if applicable).
+4. **Visualization**: Generates visual insights using tools like Matplotlib, Plotly, or Tableau (if applicable).
 
 ## Technologies Used
 
@@ -34,6 +33,8 @@ The repository contains the following components:
 
 
 ## How to Run the Project
+![my Diagram drawio2](https://github.com/user-attachments/assets/58750db9-7400-48f7-934a-d150da72ad94)
+
 
 ### Prerequisites
 
